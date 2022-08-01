@@ -32,8 +32,8 @@ public class Main {
                     fractional = number.split("\\.")[1];
                     number = number.split("\\.")[0];
                     //convert to decimal
-                    fraction = ConvertToDecimal.fractionToDecimal(fractional.toCharArray(), Integer.parseInt(source));
-                    integer = number.equals("0") ? BigInteger.ZERO : ConvertToDecimal.toDeci(number, Integer.parseInt(source));
+                    fraction = Converter.fractionToDecimal(fractional.toCharArray(), Integer.parseInt(source));
+                    integer = number.equals("0") ? BigInteger.ZERO : Converter.toDeci(number, Integer.parseInt(source));
 
                     //convert from decimal
                     String fractionalResult = String.valueOf(Converter.toRadix(fraction, Integer.parseInt(target), 5));
@@ -42,7 +42,7 @@ public class Main {
 
                     System.out.println("Conversion result: " + integerResult + "." + fractionalResult);
                 } else {
-                    integer = ConvertToDecimal.toDeci(number, Integer.parseInt(source));
+                    integer = Converter.toDeci(number, Integer.parseInt(source));
                     System.out.println("Conversion result: " + Converter.fromDeci(Integer.parseInt(target), integer));
                 }
 
