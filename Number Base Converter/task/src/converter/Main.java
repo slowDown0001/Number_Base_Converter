@@ -29,8 +29,10 @@ public class Main {
                 String number = SCANNER.next();
                 if (number.equals("/back")) break;
                 if (number.contains(".")) {
+                    
                     fractional = number.split("\\.")[1];
                     number = number.split("\\.")[0];
+                    
                     //convert to decimal
                     fraction = Converter.fractionToDecimal(fractional.toCharArray(), Integer.parseInt(source));
                     integer = number.equals("0") ? BigInteger.ZERO : Converter.toDeci(number, Integer.parseInt(source));
@@ -39,11 +41,13 @@ public class Main {
                     String fractionalResult = String.valueOf(Converter.toRadix(fraction, Integer.parseInt(target), 5));
                     String integerResult = number.equals("0") ? "0" : Converter.fromDeci(Integer.parseInt(target), integer);
 
-
-                    System.out.println("Conversion result: " + integerResult + "." + fractionalResult);
+                    System.out.println("Conversion result: " + integerResult + "." + fractionalResult);     
+                    
                 } else {
+                    
                     integer = Converter.toDeci(number, Integer.parseInt(source));
                     System.out.println("Conversion result: " + Converter.fromDeci(Integer.parseInt(target), integer));
+                    
                 }
 
                 System.out.println();
